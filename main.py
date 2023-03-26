@@ -1,12 +1,17 @@
-from flask import Flask
+from flask import Flask, render_template, request, url_for, redirect
 
 app =  Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=["GET","POST"])
 
 
 def hallo():
-    return 'Hallo zusammen wie geths?'
+    if request.method == "POST":
+        number1 = request.form["ersteZahl"]
+        number2 = request.form["zweiteZahl"]
+        return number1 
+    else:
+        return render_template('index.html')
 
 @app.route('/home')
 
