@@ -9,7 +9,7 @@ def hallo():
     if request.method == "POST":
         number1 = request.form["ersteZahl"]
         number2 = request.form["zweiteZahl"]
-        return number1 
+        return number2 
     else:
         return render_template('index.html')
 
